@@ -24,13 +24,15 @@ jobs:
           tags: maaoordina/maao_exercise_repo:latest
 
   deploy-job:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         environment: [dev, acc, pro]
       fail-fast: true
+      max-parallel: 1
+    runs-on: ubuntu-latest
     environment: ${{ matrix.environment }}
     needs: build
+    continue-on-error: false
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v4
