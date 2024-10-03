@@ -4,4 +4,4 @@ runs:
   using: "composite"
   steps:
     - run: .github/actions/nightly_build/nightly_build.sh
-      shell: sh
+      shell: bash
