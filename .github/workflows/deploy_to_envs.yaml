@@ -44,6 +44,3 @@ jobs:
 
       - name: Finish building
         run: echo "Build completed successfully"
-  
-      - name: Custom action that would inform only PROD about a deploy.
-        run: echo PLACEHOLDER
