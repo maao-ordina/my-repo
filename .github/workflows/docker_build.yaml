@@ -16,7 +16,5 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
-      - run: docker build Dockerfile
+      - run: docker build "./Dockerfile"
         working-directory: exercise_3
-      
-  # More jobs can be added
