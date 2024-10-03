@@ -28,6 +28,7 @@ jobs:
     strategy:
       matrix:
         environment: [dev, acc, pro]
+      fail-fast: true
     environment: ${{ matrix.environment }}
     needs: build
     steps:
@@ -35,7 +36,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build or simulate building
-        run: echo environment ${{ vars.PILLAR }}
+        run: if [${{ vars.PILLAR }} == "ACC"]; exit 1 fi
 
       - name: Finish building
         run: echo "Build completed successfully"
