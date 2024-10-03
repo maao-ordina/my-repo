@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: [master]
 
 
 jobs:
@@ -42,3 +44,9 @@ jobs:
 
       - name: Finish building
         run: echo "Build completed successfully"
+  
+  inform-job:
+    runs-on: ubuntu-latest
+    needs: deploy-job
+    steps:
+      - run: echo PLACEHOLDER
