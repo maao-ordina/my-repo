@@ -9,4 +9,5 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-    - uses: nightly_build
+    - uses: actions/checkout@v4
+    - uses: .github/actions/nightly_build
