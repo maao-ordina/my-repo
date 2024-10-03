@@ -19,7 +19,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - run: pip install black flake8
     - run: black --check .
+      working-directory: exercise_2
     - run: flake8 .
       working-directory: exercise_2
