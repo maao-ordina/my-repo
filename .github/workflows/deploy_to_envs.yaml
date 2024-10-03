@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build or simulate building
-        run: if ['${{ vars.PILLAR }}' == 'ACC']; then exit 1; fi;
+        run: echo ${{ vars.PILLAR }}
 
       - name: Finish building
         run: echo "Build completed successfully"
