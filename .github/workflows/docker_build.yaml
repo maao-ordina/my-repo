@@ -16,6 +16,5 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
-      - run: docker build exercise_3 -t the_image
-      - run: docker tag the_image maaoordina/maao_exercise_repo
-      - run: docker push maaoordina/maao_exercise_repo:the_image
+      - run: docker build exercise_3 -t maaoordina/maao_exercise_repo
+      - run: docker push maaoordina/maao_exercise_repo
