@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -f Dockerfile
-        working-directory: exercise_3
       - run: docker login $DOCKER_USERNAME $DOCKER_TOKEN
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+      - run: docker build Dockerfile
+        working-directory: exercise_3
       
   # More jobs can be added
