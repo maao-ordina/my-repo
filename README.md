@@ -1,6 +1,6 @@
 # GitHub Actions Course
 
-[![Test Status]](https://github.com/maao-ordina/.github/workflows/lint_and_tests.yaml)
+![Test Status](https://github.com/maao-ordina/.github/workflows/lint_and_tests.yaml/badge.svg)
 
 Welcome to the GitHub Actions Course! This repository serves as a guide to help you set up your own repository to explore and learn GitHub Actions independently using your GitHub account.
 
