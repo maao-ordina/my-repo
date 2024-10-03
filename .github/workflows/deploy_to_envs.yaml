@@ -24,19 +24,21 @@ jobs:
           tags: maaoordina/maao_exercise_repo:latest
 
   deploy-job:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         environment: [dev, acc, pro]
       fail-fast: true
+      max-parallel: 1
+    runs-on: ubuntu-latest
     environment: ${{ matrix.environment }}
     needs: build
+    continue-on-error: false
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v4
 
       - name: Build or simulate building
-        run: if [${{ vars.PILLAR }} == "ACC"]; exit 1 fi
+        run: if [${{ vars.PILLAR }} == "ACC"]; then exit 1 fi
 
       - name: Finish building
         run: echo "Build completed successfully"
