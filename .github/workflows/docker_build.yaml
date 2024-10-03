@@ -17,5 +17,5 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
       - run: docker build exercise_3 -t maaoordina/maao_exercise_repo
-      - run: docker tag maaoordina/maao_exercise_repo ${CI_COMMIT_SHORT_SHA}
+      - run: docker tag ${CI_COMMIT_SHORT_SHA}
       - run: docker push maaoordina/maao_exercise_repo
