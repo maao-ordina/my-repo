@@ -13,7 +13,12 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-    # Add step to install dependencies
+    - name: install deps
+      run: pip install black flake8
 
   lint:
-    # Complete the lint job configuration
+    runs-on: ubuntu-latest
+    steps:
+    - run: black --check
+    - run: flake8 .
+    - run: pytest exercise_2
