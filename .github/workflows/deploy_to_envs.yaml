@@ -7,17 +7,18 @@ on:
 
 
 jobs:
-  build-and-push:
+  deploy-job:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [dev, acc, pro]
+    environment: ${{ matrix.environment }}
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v4
 
       - name: Build or simulate building
-        # run: sleep 5
+        run: echo environment ${{ vars.PILLAR }}
 
       - name: Finish building
         run: echo "Build completed successfully"
-
-  # Chain the next job to the previous one and make it deploy
-  # to different environments with manual approvals
