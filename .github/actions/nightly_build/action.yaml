@@ -1,0 +1,7 @@
+name: 'Nightly build'
+description: 'Run a nightly build script'
+runs:
+  using: "composite"
+  steps:
+    - run: .github/actions/nightly_build/nightly_build.sh
+      shell: sh

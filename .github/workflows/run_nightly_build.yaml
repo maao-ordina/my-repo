@@ -1,0 +1,13 @@
+name: Hello World Workflow
+
+on: 
+  schedule:
+    - cron: "5 * * * *"
+
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: .github/actions/nightly_build
