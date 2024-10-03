@@ -4,13 +4,16 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: [master]
 
 
 jobs:
-  deploy:
-    strategy:
-      environment: [dev, acc, pro]
+  deploy-job:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [dev, acc, pro]
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v4
