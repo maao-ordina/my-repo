@@ -19,5 +19,6 @@ jobs:
       - uses: docker/setup-qemu-action@v3
       - uses: docker/build-push-action@v6
         with:
+          context: ./exercise_3
           push: true
           tags: user/app:latest
