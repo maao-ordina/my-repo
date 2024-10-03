@@ -22,4 +22,3 @@ jobs:
     - run: pip install black flake8
     - run: black --check .
     - run: flake8 .
-    - run: ls
