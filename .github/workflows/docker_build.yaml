@@ -21,4 +21,4 @@ jobs:
         with:
           context: ./exercise_3
           push: true
-          tags: user/app:latest
+          tags: maaoordina/maao_exercise_repo:latest
